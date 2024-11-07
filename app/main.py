@@ -1,10 +1,10 @@
 import sqlite3
 from flask import Flask, render_template, request, session, redirect, url_for, jsonify, make_response
+import os
 
 app = Flask(__name__)
 app.secret_key = 'e6008a019495ffa0b29f43ad'
-sqldbname = 'database.db'
-
+sqldbname = os.path.join(os.path.dirname(__file__), 'static', 'databaseWebsite.db')
 
 # Ham result_to_dict dung de chuyen products tu list ve dictionary
 def user_result_to_dict(products):
